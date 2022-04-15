@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+  </head>
+  <body class="container">
+    <button id="complimentButton">Get a compliment</button>
+    <button id="fortuneButton">Get a fortune</button>
+    <button id="blackfight">Can I beat a black bear?</button>
+    <button id="brownfight">Can I beat a brown bear?</button>
+    <button id="whitefight">Can I beat a polar bear?</button>
+    <button id="seafight">Can I beat a sea bear?</button>
+
+    <select id="bears" name="bears">
+      <option value="default">Survival odds...</option>
+      <option value="blackBear">Black Bear</option>
+      <option value="brownBear">Brown Bear</option>
+      <option value="polarBear">Polar Bear</option>
+      <option value="teddyBear">Sea Bear</option>
+    </select>
+     <p> DROPDOWN IS A WORK IN PROGRESS PLEASE BEAR WITH ME</p>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("complimentButton").onclick = function () {
+        axios.get("http://localhost:4000/api/compliment/")
+            .then(function (response) {
+               const data = response.data;
+               alert(data);
+             });
+       };
+          
+    </script>    
+    <script>
+      document.getElementById("fortuneButton").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+      
+    </script>
+    <script>
+      document.getElementById("bears").onclick = function () {
+        axios.get("http://localhost:4000/api/bears/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+      
+    </script>
+    <script>
+      document.getElementById("blackfight").onclick = function () {
+        axios.get("http://localhost:4000/api/blackfight/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+      
+    </script>
+    <script>
+      document.getElementById("brownfight").onclick = function () {
+        axios.get("http://localhost:4000/api/brownfight/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+      
+    </script>
+    <script>
+      document.getElementById("whitefight").onclick = function () {
+        axios.get("http://localhost:4000/api/whitefight/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+      
+    </script>
+    <script>
+      document.getElementById("seafight").onclick = function () {
+        axios.get("http://localhost:4000/api/seafight/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+      
+    </script>
+    
+
+  </body>
+</html>
